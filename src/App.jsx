@@ -26,7 +26,7 @@ const App = () => {
     }
   };
 
-  console.log(inputValues);
+  // console.log(inputValues);
 
   // console.log(new Date().getTime());
 
@@ -35,12 +35,12 @@ const App = () => {
   }, []);
 
   const mapped = cardData.map((ele, idx) => {
-    return <Card Data={ele} key={ele.id} />;
+    return <Card Data={ele} key={ele.id} Refresh={Fetch_api} />;
   }, []);
 
   return (
     <div
-      className={`border-2 border-blue-700 ${
+      className={` ${
         spinner ? "h-screen justify-center" : "h-fit"
       } flex flex-col  items-center`}
     >
@@ -71,6 +71,10 @@ const App = () => {
               });
 
               Fetch_api();
+              SetinputValues({
+                Name: "",
+                Text: "",
+              });
             }}
           >
             <input

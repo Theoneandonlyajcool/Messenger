@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Delete_Api } from "../Services/Fetch_Calls";
 import { data } from "react-router-dom";
 
-const Card = ({ Data }) => {
+const Card = ({ Data, Refresh }) => {
   const [Delete, SetDelete] = useState(false);
   return (
     // Card _cont
@@ -20,10 +20,10 @@ const Card = ({ Data }) => {
         {Delete && (
           <button
             className="absolute bg-gradient-to-tr from-red-600 text-white font-bold px-4 rounded-lg py-1 to-red-900 right-0 bottom-4 flex items-center gap-1"
-            // onClick={() => {
-            //   Delete_Api(Data.id);
-
-            // }}
+            onClick={async () => {
+              Delete_Api(Data.id);
+              Refresh();
+            }}
           >
             Delete <AiFillDelete className="text-2xl text-red-100 font-bold " />
           </button>

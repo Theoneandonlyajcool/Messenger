@@ -13,12 +13,6 @@
       "id": "c79e"
     },
     {
-      "username": "donalddduck",
-      "message": "pretty good. studying react rn.",
-      "time": "10:32 AM",
-      "id": "bfce"
-    },
-    {
       "username": "akim1822",
       "message": "me too! I just finished learning about fetch.",
       "time": "10:33 AM",
@@ -83,22 +77,6 @@
       "message": "nice, it works great with try/catch blocks.",
       "time": "10:43 AM",
       "id": "78b2"
-    },
-    {
-      "username": "codequeen",
-      "message": "let’s all build a mini project to practice?",
-      "time": "10:44 AM",
-      "id": "4e1f"
-    },
-    {
-      "id": "4feb",
-      "username": "Aj",
-      "message": "good"
-    },
-    {
-      "id": "2b4a",
-      "username": "i sai",
-      "message": "rjgipjg"
     }
   ]
 }
