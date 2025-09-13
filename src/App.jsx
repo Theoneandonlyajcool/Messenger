@@ -6,6 +6,7 @@ import Card from "./Components/Card";
 
 const App = () => {
   const [cardData, SetcardData] = useState([]);
+  const [Time, SetTime] = useState(0);
   const [spinner, SetSpinner] = useState(false);
   const [inputValues, SetinputValues] = useState({
     Name: "",
@@ -26,16 +27,30 @@ const App = () => {
     }
   };
 
-  // console.log(inputValues);
+  console.log(Time);
 
-  // console.log(new Date().getTime());
+  // For Getting current time
+  const GetTime = () => {
+    const now = new Date();
+    const time = now.toLocaleTimeString("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+      // second: "2-digit",
+      hour12: false,
+    });
+
+    SetTime(time);
+  };
 
   useEffect(() => {
     Fetch_api();
+    GetTime();
   }, []);
 
   const mapped = cardData.map((ele, idx) => {
-    return <Card Data={ele} key={ele.id} Refresh={Fetch_api} />;
+    return (
+      <Card Data={ele} Card_Time={Time} key={ele.id} Refresh={Fetch_api} />
+    );
   }, []);
 
   return (
@@ -67,14 +82,15 @@ const App = () => {
                 body: JSON.stringify({
                   username: inputValues.Name,
                   message: inputValues.Text,
+                  time: Time,
                 }),
               });
 
-              Fetch_api();
               SetinputValues({
                 Name: "",
                 Text: "",
               });
+              Fetch_api();
             }}
           >
             <input
