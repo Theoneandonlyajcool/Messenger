@@ -21,7 +21,7 @@ const Card = ({ Data, Card_Refresh }) => {
           <button
             className="absolute bg-gradient-to-tr from-red-600 text-white font-bold px-4 rounded-lg py-1 to-red-900 right-0 bottom-4 flex items-center gap-1"
             onClick={async () => {
-              Delete_Api(Data.id);
+              await Delete_Api(Data.id);
               Card_Refresh();
             }}
           >

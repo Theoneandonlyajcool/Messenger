@@ -40,12 +40,12 @@ const App = () => {
 
     // SetTime(time);
     time > "12:00" ? SetTime(`${time} PM`) : SetTime(`${time} AM`);
-    // console.log(time > "12:00" ? "pm" : "Am");
+    console.log(time > "12:00" ? "pm" : "Am");
   };
 
   useEffect(() => {
     Fetch_api();
-    GetTime();
+    // GetTime();
   }, []);
 
   const mapped = cardData.map((ele, idx) => {
@@ -83,9 +83,10 @@ const App = () => {
             action="
       submit"
             className="my-8 flex gap-4  items-center flex-col"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              fetch(Baseurl, {
+              await GetTime();
+              await fetch(Baseurl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

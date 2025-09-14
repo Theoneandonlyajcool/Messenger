@@ -7,22 +7,10 @@
       "id": "bfce"
     },
     {
-      "username": "akim1822",
-      "message": "me too! I just finished learning about fetch.",
-      "time": "10:33 AM",
-      "id": "19c8"
-    },
-    {
       "username": "codequeen",
       "message": "I’m still trying to understand useEffect.",
       "time": "10:34 AM",
       "id": "8f12"
-    },
-    {
-      "username": "dev_mike",
-      "message": "useEffect can be tricky at first.",
-      "time": "10:35 AM",
-      "id": "4a92"
     },
     {
       "username": "donalddduck",
@@ -35,12 +23,6 @@
       "message": "same here, I had to re-read docs a lot.",
       "time": "10:37 AM",
       "id": "2c3e"
-    },
-    {
-      "username": "codequeen",
-      "message": "once it clicks, it really helps though.",
-      "time": "10:38 AM",
-      "id": "bb5d"
     },
     {
       "username": "alvnprgrmmr",
@@ -71,12 +53,6 @@
       "message": "nice, it works great with try/catch blocks.",
       "time": "10:43 AM",
       "id": "78b2"
-    },
-    {
-      "username": "codequeen",
-      "message": "let’s all build a mini project to practice?",
-      "time": "10:44 AM",
-      "id": "4e1f"
     }
   ]
 }
