@@ -1,16 +1,10 @@
 {
   "messages": [
     {
-      "username": "alvnprgrmmr",
-      "message": "hey!",
-      "time": "10:30 AM",
-      "id": "1a7c"
-    },
-    {
-      "username": "alvnprgrmmr",
-      "message": "how is it going?",
-      "time": "10:31 AM",
-      "id": "c79e"
+      "username": "donalddduck",
+      "message": "pretty good. studying react rn.",
+      "time": "10:32 AM",
+      "id": "bfce"
     },
     {
       "username": "akim1822",
@@ -77,6 +71,12 @@
       "message": "nice, it works great with try/catch blocks.",
       "time": "10:43 AM",
       "id": "78b2"
+    },
+    {
+      "username": "codequeen",
+      "message": "let’s all build a mini project to practice?",
+      "time": "10:44 AM",
+      "id": "4e1f"
     }
   ]
 }

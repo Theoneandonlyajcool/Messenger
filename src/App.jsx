@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { ImSpinner3 } from "react-icons/im";
-import { ImSpinner9 } from "react-icons/im";
-import { useParams } from "react-router-dom";
+import { IoMdRefresh } from "react-icons/io";
+import { ImSpinner } from "react-icons/im";
 import Card from "./Components/Card";
 
 const App = () => {
   const [cardData, SetcardData] = useState([]);
-  const [Time, SetTime] = useState(0);
+  const [Time, SetTime] = useState("");
   const [spinner, SetSpinner] = useState(false);
   const [inputValues, SetinputValues] = useState({
     Name: "",
@@ -39,7 +38,9 @@ const App = () => {
       hour12: false,
     });
 
-    SetTime(time);
+    // SetTime(time);
+    time > "12:00" ? SetTime(`${time} PM`) : SetTime(`${time} AM`);
+    // console.log(time > "12:00" ? "pm" : "Am");
   };
 
   useEffect(() => {
@@ -49,7 +50,7 @@ const App = () => {
 
   const mapped = cardData.map((ele, idx) => {
     return (
-      <Card Data={ele} Card_Time={Time} key={ele.id} Refresh={Fetch_api} />
+      <Card Data={ele} Card_Time={Time} key={ele.id} Card_Refresh={Fetch_api} />
     );
   }, []);
 
@@ -63,12 +64,20 @@ const App = () => {
 
       {spinner ? (
         <div>
-          <ImSpinner9 className="text-6xl text-teal-700 animate-spin" />
+          <ImSpinner className="text-6xl text-teal-700 animate-spin" />
         </div>
       ) : (
         <div className="">
           {/* Content */}
           <div>{mapped}</div>
+
+          {/* Refresh button */}
+          <button
+            className="fixed top-3 right-3 bg-gradient-to-tr from-teal-500 to-teal-900 text-white font-bold px-5 py-1 rounded-md flex items-center gap-1"
+            onClick={() => Fetch_api()}
+          >
+            Refresh <IoMdRefresh className="font-bold text-[1.3rem]" />
+          </button>
 
           <form
             action="
